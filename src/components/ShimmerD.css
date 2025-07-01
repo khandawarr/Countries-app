@@ -1,0 +1,97 @@
+:root {
+  --shimmerD-bg: #ccc;
+  --shimmerD-highlight: #e0e0e0;
+}
+
+body.Dark, html.Dark {
+  --shimmerD-bg: #2e3a4a;
+  --shimmerD-highlight: #3a4b5c;
+}
+
+.shimmerD p span {
+  text-align: center;
+  height: 10px;
+  width: 40px;
+  border-radius: 2px;
+  box-shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--shimmerD-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerD p span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--shimmerD-highlight), transparent);
+  animation: shimmerD-move 1.5s infinite;
+  opacity: 0.7;
+}
+
+@keyframes shimmerD-move {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.shimmerD p{
+  display: flex;
+  align-items: center;
+}
+
+.shimmerN h3 div {
+  height: 30px;
+  width: 180px;
+  border-radius: 4px;
+  box-shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--shimmerD-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerN h3 div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--shimmerD-highlight), transparent);
+  animation: shimmerD-move 1.5s infinite;
+  opacity: 0.7;
+}
+
+.shimmerI .img {
+  width: 250px;
+  height: 160px;
+  border-radius: 4px;
+  box-shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--shimmerD-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerI .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--shimmerD-highlight), transparent);
+  animation: shimmerD-move 1.5s infinite;
+  opacity: 0.7;
+}
+
+@media (min-width: 500px) {
+  .shimmerI .img {
+    width: 400px;
+    height: 280px;
+  }
+}
